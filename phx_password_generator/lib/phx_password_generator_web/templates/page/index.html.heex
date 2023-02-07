@@ -1,0 +1,66 @@
+<div class="row">
+<div class="column column-60 column-offset-20 ">
+
+<div class="row">
+
+    <div class="column column-80 colunmn-offset-10">
+    <h1>Password Generator</h1>
+    </div>
+
+</div>
+
+<input type="text" name="" id=""value={@password}>
+<.form let={f} for={:password} action={Routes.page_path(@conn, :generate)}>
+
+<div class="row">
+
+  <div class="column">
+  <%= label f, :password_length, "Password length"  %>
+  </div>
+
+  <div class="column">
+  <%= select f, :length, @password_lengths, class: "float-right"  %>
+  </div>
+
+</div>
+
+
+<div class="row">
+
+  <div class="column">
+  <%= label f, :uppercase, "Include uppercase characters"  %>
+  </div>
+  
+  <div class="column">
+  <%= checkbox f, :uppercase  %>
+  (e.g ABCD)
+  </div>
+
+</div>
+
+
+<div class="row">
+
+  <div class="column">
+  <%= label f, :symbols, "Include symbols characters"  %>
+  </div>
+  
+  <div class="column">
+  <%= checkbox f, :symbols  %>
+  (e.g /*-%)
+  </div>
+
+</div>
+
+<div class="row">
+<%= submit "Generate Password", class: "column column-100" %>
+</div>
+
+
+</.form>
+
+</div>
+
+
+
+</div>
